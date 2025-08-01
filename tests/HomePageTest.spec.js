@@ -1,17 +1,17 @@
-const {test,expect} = require('@playwright/test');
+const {test,expect} =require('@playwright/test')
 
 test('Home Page',async({page})=>{
- await page.goto('https://www.demoblaze.com/index.html');
+    await page.goto('https://www.saucedemo.com/')
 
- const pageTitle=page.title();
+    const title=await page.title()
+    console.log(title)
+    await expect(page).toHaveTitle('Swag Labs')
 
- console.log('page title is:',pageTitle);
+    const pageurl=page.url();
+    console.log(pageurl);
+    await expect(page).toHaveURL("https://www.saucedemo.com/")
+    await page.close();
 
- await expect(page).toHaveTitle('STORE');
- const pageURL=page.url();
- console.log('Page url is:',pageURL)
- await expect(page).toHaveURL('https://www.demoblaze.com/index.html');
- await page.close();
- 
+
+
 })
-
