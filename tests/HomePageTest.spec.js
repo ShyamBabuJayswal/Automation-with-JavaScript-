@@ -12,6 +12,4 @@ test('Home Page',async({page})=>{
     await expect(page).toHaveURL("https://www.saucedemo.com/")
     await page.close();
 
-
-
 })
